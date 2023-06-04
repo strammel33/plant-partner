@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type='text/css' href="{% static 'css/plants/plant-index'%}">
+{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <h1>Plant List</h1>
+</section>
+
+<section class="card-container">
+  {% for plant in plants %}
+    <div class="card">
+      <div class="class-content">
+        <div class="card-img-container">
+          <h2>this should be a plant picture</h2>
+        </div>
+        <h2 class="card-title">{{ plant.name }}</h2>
+        <p>{{ plant.location }}</p>
+        <p>{{ plant.description }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}
