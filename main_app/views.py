@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Plant
+from .forms import CaringForm
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -37,7 +38,17 @@ def plant_index(request):
 @login_required
 def plant_detail(request, plant_id):
   plant = Plant.objects.get(id=plant_id)
-  return render(request, 'plants/detail.html',  {'plant': plant })
+  caring_form = CaringForm()
+  return render(request, 'plants/detail.html',  {'plant': plant, 'caring_form': caring_form })
+
+@login_required
+def add_caring(request, plant_id):
+  form = CaringForm(request.POST)
+  if form.is_valid():
+    new_caring = form.save(commit=False)
+    new_caring.plant_id = plant_id
+    new_caring.save()
+  return redirect('plant-detail', plant_id=plant_id)
 
 class PlantCreate(LoginRequiredMixin, CreateView):
   model = Plant

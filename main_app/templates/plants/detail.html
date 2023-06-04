@@ -2,7 +2,17 @@
 {% load static %}
 
 {% block head %}
+<link 
+  href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
+  rel="stylesheet" 
+/>
+<link rel="stylesheet" href="{% static 'css/mcdp.css' %}">
+<script 
+  src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
+>
+</script>
 <link rel="stylesheet" type="text/css" href="{% static 'css/plants/plant-detail.css' %}">
+<script defer src="{% static 'js/plant-detail.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -26,19 +36,37 @@
       <h2>Plant Care</h2>
       <h3>maybe a photo of a watering can</h3>
     </div>
-    <table>
-      <thead>
-        <tr><th>Date</th><th>Care</th></tr>
-      </thead>
-      <tbody>
-        {% for caring in plant.caring_set.all %}
-          <tr>
-            <td>{{caring.date}}</td>
-            <td>{{caring.get_care_display}}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    <h3>Add Plant Care</h3>
+    <form 
+      action="{% url 'add-caring' plant.id %}" 
+      method="post" 
+      class="subsection-content" 
+      autocomplete="off"
+    >
+      {% csrf_token %}
+      {{ caring_form.as_p }}
+      <button type="submit" class="btn submit">Add Care</button>
+    </form>
+    <h3>Past Care</h3>
+    {% if plant.caring_set.all.count %}
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Care</th></tr>
+        </thead>
+        <tbody>
+          {% for caring in plant.caring_set.all %}
+            <tr>
+              <td>{{caring.date}}</td>
+              <td>{{caring.get_care_display}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <div class="subsection-content">
+        <p>{{plant.name}} has no recorded care.</p>
+      </div>
+    {% endif %}
   </section>
 </div>
 {% endblock %}
