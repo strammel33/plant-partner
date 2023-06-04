@@ -20,4 +20,25 @@
     </div>
   </div>
 </section>
+<div class="care-container">
+  <section class="care">
+    <div class="subsection-title">
+      <h2>Plant Care</h2>
+      <h3>maybe a photo of a watering can</h3>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Date</th><th>Care</th></tr>
+      </thead>
+      <tbody>
+        {% for caring in plant.caring_set.all %}
+          <tr>
+            <td>{{caring.date}}</td>
+            <td>{{caring.get_care_display}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</div>
 {% endblock %}
