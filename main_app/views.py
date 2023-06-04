@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.views.generic.edit import CreateView
 from .models import Plant
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
@@ -37,3 +38,11 @@ def plant_index(request):
 def plant_detail(request, plant_id):
   plant = Plant.objects.get(id=plant_id)
   return render(request, 'plants/detail.html',  {'plant': plant })
+
+class PlantCreate(LoginRequiredMixin, CreateView):
+  model = Plant
+  fields = ['name', 'location', 'description']
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)

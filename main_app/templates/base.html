@@ -27,6 +27,7 @@
       <ul>
         {% if user.is_authenticated %}
         <li><a href="{% url 'plant-index' %}">My Plants</a></li>
+        <li><a href="{% url 'plant-create' %}">Add a Plant</a></li>
         <li><a href="{% url 'logout' %}">Log Out</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
         {% else %}
