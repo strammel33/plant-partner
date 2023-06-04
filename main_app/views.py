@@ -31,4 +31,9 @@ def about(request):
 @login_required
 def plant_index(request):
   plants = Plant.objects.filter(user=request.user)
-  return render(request, 'plants/index.html', {'plants': plants})
+  return render(request, 'plants/index.html', { 'plants': plants })
+
+@login_required
+def plant_detail(request, plant_id):
+  plant = Plant.objects.get(id=plant_id)
+  return render(request, 'plants/detail.html',  {'plant': plant })
