@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Plant
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
@@ -46,3 +46,11 @@ class PlantCreate(LoginRequiredMixin, CreateView):
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
+
+class PlantUpdate(LoginRequiredMixin, UpdateView):
+  model = Plant
+  fields = ['location', 'description']
+
+class PlantDelete(LoginRequiredMixin, DeleteView):
+  model = Plant
+  success_url = '/plants/'
