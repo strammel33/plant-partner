@@ -117,7 +117,7 @@ nav li {
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 
 .btn:hover {

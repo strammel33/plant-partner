@@ -17,26 +17,40 @@
 
 {% block content %}
 <section class="plant-container">
-  <div class="plant-img">
-    <h1>picture of a plant</h1>
-  </div>
-  <div class="plant-details">
-    <h1>{{ plant.name }}</h1>
-    <p>{{ plant.location }}</p>
-    <p>{{ plant.description }}</p>
-    <div class='plant-actions'>
-      <a href="{% url 'plant-update' plant.id %}" class="btn warn">Edit</a>
-      <a href="{% url 'plant-delete' plant.id %}" class="btn danger">Delete</a>
+  <section class="plant">
+    <div class="plant-img">
+      {% if plant.photo.url %}
+        <img 
+          src="{{plant.photo.url}}" 
+          alt="A photo of {{plant.name}}" 
+          class="usr-img"
+        >
+      {% else %}
+        <img 
+          src="{% static 'images/default-plant.png' %}" 
+          alt="A potted plant icon"
+        >
+      {% endif %}
     </div>
+    <div class="plant-details">
+      <h1>{{ plant.name }}</h1>
+      <h2>{{ plant.location }}</h2>
+      <p>{{ plant.description }}</p>
+    </div>
+  </section>
+  <div class='plant-actions'>
+    <a href="{% url 'plant-update' plant.id %}" class="btn warn">Edit</a>
+    <a href="{% url 'plant-delete' plant.id %}" class="btn danger">Delete</a>
   </div>
 </section>
 <div class="care-container">
   <section class="care">
     <div class="subsection-title">
-      <h2>Plant Care</h2>
-      <h3>maybe a photo of a watering can</h3>
+      <img src="{% static 'images/spray.png' %}" alt="A spray bottle icon">
+      <img src="{% static 'images/fertilizer.png' %}" alt="A fertilizer icon">
+      <img src="{% static 'images/watering-can.png' %}" alt="A watering can icon">
     </div>
-    <h3>Add Plant Care</h3>
+    <h3>Tend to {{ plant.name }}</h3>
     <form 
       action="{% url 'add-caring' plant.id %}" 
       method="post" 
@@ -45,13 +59,14 @@
     >
       {% csrf_token %}
       {{ caring_form.as_p }}
-      <button type="submit" class="btn submit">Add Care</button>
+      <button type="submit" class="btn submit">Add</button>
     </form>
     <h3>Past Care</h3>
     {% if plant.caring_set.all.count %}
+    <div class="table">
       <table>
         <thead>
-          <tr><th>Date</th><th>Care</th></tr>
+          <tr><th>Date</th><th>Care Given</th></tr>
         </thead>
         <tbody>
           {% for caring in plant.caring_set.all %}
@@ -62,6 +77,7 @@
           {% endfor %}
         </tbody>
       </table>
+    </div>
     {% else %}
       <div class="subsection-content">
         <p>{{plant.name}} has no recorded care.</p>
