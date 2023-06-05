@@ -28,7 +28,7 @@ class Home(LoginView):
   template_name = 'home.html'
 
 def about(request):
-  return HttpResponse('<h3>this is going to be plant partner info</h3>')
+  return render(request, 'about.html')
 
 @login_required
 def plant_index(request):
