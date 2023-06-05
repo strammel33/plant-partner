@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Plant
+from .models import Plant, Caring
 from .forms import CaringForm
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login

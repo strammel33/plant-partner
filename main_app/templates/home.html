@@ -8,18 +8,17 @@
 {% block content %}
 <section class="logo-container">
   <div class="plant-container">
-    <h3>logo pic</h3>
-    <h3>little click logo</h3>
+    <img src="{% static 'images/plant-partner-logo.png' %}" alt="The Plant Partner Logo">
   </div>
 </section>
 {% if not user.is_authenticated %}
 <section>
   <form action="{% url 'home' %}" method="post" class="login">
-    <h1>Login</h1>
+    <h2>Log In</h2>
     {% csrf_token %}
     {{ form.as_p }}
     <input type="hidden" name="next" value="{{ next }}">
-    <button type="submit" class="btn submit">Login</button>
+    <button type="submit" class="btn submit">Log In</button>
   </form>
 </section>
 {% endif %}
