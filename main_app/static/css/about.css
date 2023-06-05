@@ -1,0 +1,20 @@
+body {
+  background-color: rgb(31,120,75);
+  color: rgb(254, 249, 254);
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  max-width: 60%;
+}
+
+@media only screen and (min-width: 768px) {
+  img {
+    max-width: 45%;
+  }
+}
