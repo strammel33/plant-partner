@@ -1,0 +1,30 @@
+body {
+  background-color: rgba(137, 211, 85, 0.506);
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--nav-bg);
+  width: 250px;
+  margin: 10px;
+  border: var(--borders);
+  box-shadow: var(--card-box-shadow);
+}
+
+.card > a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+

@@ -26,6 +26,7 @@ body {
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
     'Helvetica Neue', sans-serif;
   min-height: 100vh;
+  --title-font: 'Balsamiq Sans', 'Roboto', sans-serif;
   --nav-bg: rgba(254, 249, 254, .7);
   --nav-bg-ff: rgba(254, 249, 254, .9);
   --borders: rgb(47, 95, 60) solid 3px;
@@ -145,6 +146,7 @@ nav li {
 
 .page-header h1 {
   font-size: var(--font-xxl);
+  font-family: var(--title-font);
   margin: 0;
 }
 

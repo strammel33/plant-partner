@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" type='text/css' href="{% static 'css/plants/plant-index'%}">
+<link rel="stylesheet" type='text/css' href="{% static 'css/plants/plant-index.css'%}">
 {% endblock %}
 
 {% block content %}
@@ -16,7 +16,7 @@
       <a href="{% url 'plant-detail' plant.id %}">
         <div class="card-content">
           <div class="card-img-container">
-            <h2>this should be a plant picture</h2>
+            <img src="{% static 'images/default-plant.png' %}" alt="A potted plant icon">
           </div>
           <h2 class="card-title">{{ plant.name }}</h2>
           <p>{{ plant.location }}</p>
