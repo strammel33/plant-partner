@@ -3,13 +3,6 @@ body {
   color: rgb(254, 249, 254);
 }
 
-h1 {
-  font-family: var(--title-font);
-  /* font-size: 40px; */
-  letter-spacing: 2px;
-  font-weight: normal;
-}
-
 .page-content {
   font-size: 18px;
   letter-spacing: 1.2px;

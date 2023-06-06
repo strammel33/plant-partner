@@ -103,7 +103,12 @@ nav li {
 .page-header {
   display: flex;
   align-items: center;
-  margin: 20px;
+  justify-content: center;
+  margin: 8px 0;
+  font-family: var(--title-font);
+  color: rgb(254, 249, 254);
+  letter-spacing: 3px;
+  font-weight: normal;
 }
 
 .btn {

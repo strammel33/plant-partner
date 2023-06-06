@@ -5,10 +5,11 @@ body {
 
 main {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
+
 
 .plant {
   display: flex;

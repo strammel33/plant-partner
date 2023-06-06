@@ -7,17 +7,18 @@
 
 {% block content %}
 <div class="page-header">
+  <img src="{% static 'images/orchid-left.png' %}" alt="An orchid icon pointing left">
   {% if plant %}
     <h1>Edit the {{ plant.name }}</h1>
   {% else %}
     <h1>Add a Plant</h1>
   {% endif %}
-  <h3>picture of a plant</h3>
+  <img src="{% static 'images/orchid.png' %}" alt="An orchid icon pointing right">
 </div>
 <form action="" method="post" class="form-container" autocomplete="off">
   {% csrf_token %}
   <table>
-    {{ form.as_p }}
+    {{ form.as_table }}
   </table>
   <button type="submit" class="btn submit">Submit</button>
 </form>

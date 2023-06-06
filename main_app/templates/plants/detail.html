@@ -37,11 +37,11 @@
       <h2>{{ plant.location }}</h2>
       <p>{{ plant.description }}</p>
     </div>
+    <div class='plant-actions'>
+      <a href="{% url 'plant-update' plant.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'plant-delete' plant.id %}" class="btn danger">Delete</a>
+    </div>
   </section>
-  <div class='plant-actions'>
-    <a href="{% url 'plant-update' plant.id %}" class="btn warn">Edit</a>
-    <a href="{% url 'plant-delete' plant.id %}" class="btn danger">Delete</a>
-  </div>
 </section>
 <div class="care-container">
   <section class="care">
