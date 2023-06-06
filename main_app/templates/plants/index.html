@@ -16,7 +16,11 @@
       <a href="{% url 'plant-detail' plant.id %}">
         <div class="card-content">
           <div class="card-img-container">
-            <img src="{% static 'images/default-plant.png' %}" alt="A potted plant icon">
+            {% if plant.photo.url %}
+              <img src="{{plant.photo.url}}" alt="A photo of {{plant.name}}" class="usr-img">
+            {% else %}
+              <img src="{% static 'images/default-plant.png' %}" alt="A potted plant icon">
+            {% endif %}
           </div>
           <h2 class="card-title">{{ plant.name }}</h2>
           <p>{{ plant.location }}</p>
