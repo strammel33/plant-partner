@@ -26,6 +26,7 @@ body {
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
     'Helvetica Neue', sans-serif;
   min-height: 100vh;
+  background-color: rgb(31,120,75);
   --title-font: 'Balsamiq Sans', 'Roboto', sans-serif;
   --nav-bg: rgba(254, 249, 254, .7);
   --nav-bg-ff: rgba(254, 249, 254, .9);

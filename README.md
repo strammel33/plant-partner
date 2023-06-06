@@ -1,4 +1,4 @@
-# Plant Partner
+# 🌿 Plant Partner 🌱
 ## The Forgetful Gardener's Best Friend
 ## [Plant Partner](https://plantpartner.fly.dev)
 ***
@@ -41,6 +41,7 @@ Plant Partner makes it simple to know when you last completed basic houseplant c
 * Icons
   * [Default Plant by Umeicon](https://www.flaticon.com/free-icon/plant-pot_2469993?term=potted+plant&page=1&position=39&origin=search&related_id=2469993)
   * [Fertilizer by Victoruler](https://www.flaticon.com/free-icon/fertilizer_1993780)
+  * [Gravestone by amonrat rungreangfangsai](https://www.flaticon.com/free-icon/gravestone_4766441?term=gravestone&page=1&position=10&origin=search&related_id=4766441)
   * [Orchid by Freepik](https://www.flaticon.com/free-icon/orchid_4842298)
   * [Spray by Freepik](https://www.flaticon.com/free-icon/spray_2042429)
   * [Watering Can by Freepik](https://www.flaticon.com/free-icon/watering-plants_8991456)
@@ -49,6 +50,10 @@ Plant Partner makes it simple to know when you last completed basic houseplant c
   * [MCDatepicker](https://mcdatepicker.netlify.app/)
 ***
 ### IceBox Goals:
+* ~~Mobile responsive design~~
 * Allow users to input unique care types
 * Allow users to set time intervals for different types of care
 * Display plants differently depending on intervals for care
+***
+### 🌸 Dedicated To: 🌺
+The many, many houseplants I've killed. RIP.
