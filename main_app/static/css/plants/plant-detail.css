@@ -25,7 +25,8 @@ main {
 }
 
 .usr-img {
-  width: 100%;
+  /* width: 100%; */
+  max-width: 350px;
   border-radius: var(--card-border-radius);
 }
 

@@ -35,6 +35,12 @@ h1 {
   margin: 10px 0;
 }
 
+.usr-img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: var(--card-border-radius);
+}
+
 .card-title {
   font-family: var(--title-font);
   text-align: center;
@@ -45,5 +51,4 @@ h1 {
   text-align: center;
   font-size: 16px;
 }
-
 
