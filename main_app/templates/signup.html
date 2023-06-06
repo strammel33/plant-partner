@@ -8,7 +8,9 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Sign Up</h1>
+  <img src="{% static 'images/wheelbarrow-left.png' %}" alt="A wheelbarrow icon pointing left">
+  <h1>Get Growing</h1>
+  <img src="{% static 'images/wheelbarrow.png' %}" alt="A wheelbarrow icon pointing right">
 </div>
 {% if error_message %}
   <p class="red-text">{{ error_message }}</p>
@@ -18,7 +20,7 @@
   <table>
     {{ form.as_table }}
   </table>
-  <button type="submit" class="btn submit">Submit!</button>
+  <button type="submit" class="btn submit">Submit</button>
 </form>
 
 {% endblock %}
