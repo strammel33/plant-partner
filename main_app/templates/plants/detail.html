@@ -32,7 +32,6 @@
         >
       {% endif %}
     </div>
-    <h3>Change {{ plant.name }}'s photo</h3>
     <p id="file-name"></p>
     <form 
       action="{% url 'add-photo' plant.id %}"
@@ -44,6 +43,7 @@
         Choose photo
         <input type="file" name="photo-file" id="file-input">
       </label>
+      <p class="invisible"></p>
       <button type="submit" class="btn submit">Upload Photo</button>
     </form>
     <div class="plant-details">
@@ -53,6 +53,7 @@
     </div>
     <div class='plant-actions'>
       <a href="{% url 'plant-update' plant.id %}" class="btn warn">Edit</a>
+      <p class="invisible"></p>
       <a href="{% url 'plant-delete' plant.id %}" class="btn danger">Delete</a>
     </div>
   </section>
