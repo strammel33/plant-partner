@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block head %}
+<link rel="stylesheet" type='text/css' href="{% static 'css/delete.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="page-header">
   <img src="{% static 'images/gravestone.png' %}" alt="A gravestone icon">
-  <h1>Delete Plant?</h1>
+  <h1>Delete Plant</h1>
   <img src="{% static 'images/gravestone.png' %}" alt="A gravestone icon">
 </div>
 <h2>Are you sure you want to delete the {{ plant.name }}?</h2>
@@ -14,6 +18,7 @@
   <a href="{% url 'plant-detail' plant.id %}" class="btn secondary">
     Cancel
   </a>
-  <button type="submit" class="btn danger">Confirm Delete</button>
+  <p class="invisible"></p>
+  <button type="submit" class="btn danger">Delete</button>
 </form>
 {% endblock %}
