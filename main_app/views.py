@@ -1,14 +1,17 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Plant, Caring
+from .models import Plant, Photo
 from .forms import CaringForm
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+import uuid
+import boto3
 
+S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
+BUCKET = 'strammel-plant-partner'
 
 def signup(request):
   error_message = ''
@@ -65,3 +68,21 @@ class PlantUpdate(LoginRequiredMixin, UpdateView):
 class PlantDelete(LoginRequiredMixin, DeleteView):
   model = Plant
   success_url = '/plants/'
+
+@login_required
+def add_photo(request, plant_id):
+  photo_file = request.FILES.get('photo-file', None)
+  if photo_file:
+    s3 = boto3.client('s3')
+    key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
+    try:
+      s3.upload_fileobj(photo_file, BUCKET, key)
+      url = f"{S3_BASE_URL}{BUCKET}/{key}"
+      photo = Photo(url=url, plant_id=plant_id)
+      plant_photo = Photo.objects.filter(plant_id=plant_id)
+      if plant_photo.first():
+        plant_photo.first().delete()
+      photo.save()
+    except Exception as err:
+      print('An error occurred uploading file to S3: %s' % err)
+  return redirect('plant-detail', plant_id=plant_id)

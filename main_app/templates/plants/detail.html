@@ -32,6 +32,20 @@
         >
       {% endif %}
     </div>
+    <h3>Change {{ plant.name }}'s photo</h3>
+    <p id="file-name"></p>
+    <form 
+      action="{% url 'add-photo' plant.id %}"
+      enctype="multipart/form-data"
+      method="POST"
+    >
+      {% csrf_token %}
+      <label class="btn secondary">
+        Choose photo
+        <input type="file" name="photo-file" id="file-input">
+      </label>
+      <button type="submit" class="btn submit">Upload Photo</button>
+    </form>
     <div class="plant-details">
       <h1>{{ plant.name }}</h1>
       <h2>{{ plant.location }}</h2>
