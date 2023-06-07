@@ -28,6 +28,7 @@ th {
   font-weight: normal;
   vertical-align: top;
   font-size: var(--font-l);
+  color: var(--button-bg);
 }
 
 td {
@@ -38,6 +39,7 @@ td > * {
   width: 100%;
   padding: 2px 4px;
   font-size: var(--font-l);
+  color: var(--button-bg);
 }
 
 td > textarea {
@@ -46,7 +48,8 @@ td > textarea {
 }
 
 input, textarea {
-  background-color: var(--nav-bg)
+  background-color: var(--nav-bg);
+  color: var(--text-color);
 }
 
 .btn {
