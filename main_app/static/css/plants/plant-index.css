@@ -1,5 +1,5 @@
 .no-plants {
-  color:aliceblue;
+  color: rgb(254, 249, 254);
 }
 .card-container {
   display: flex;
@@ -11,7 +11,6 @@
   background-color: var(--nav-bg);
   width: 250px;
   margin: 10px;
-  padding: 0 10px;
   border: var(--borders);
 }
 
@@ -21,7 +20,9 @@
 }
 
 .card-content {
+  height: 100%;
   width: 100%;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,3 +50,6 @@
   font-size: 16px;
 }
 
+.card :hover {
+  background-color: rgba(254, 249, 254, 0.58);
+}
