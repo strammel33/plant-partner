@@ -22,14 +22,14 @@ main {
   border-radius: var(--card-border-radius);
 }
 
-.plant-img {
-  margin-top: 8px;;
-  max-width: 350px;
+.default-img {
+  margin-bottom: 32px;
 }
 
 .usr-img {
-  max-height: 300px;
-  max-width: 350px;
+  max-width: 300px;
+  max-height: 200px;
+  margin-bottom: 5px;
   border-radius: var(--card-border-radius);
 }
 
@@ -43,7 +43,7 @@ main {
   border-radius: var(--card-border-radius);
   padding: 8px;
   background-color: rgba(213, 236, 225, 0.863);
-  margin-right: 12px;
+  margin-left: 3px;
   border: rgba(47, 95, 60, 0.298) solid 2px;
 }
 
@@ -98,12 +98,14 @@ main {
 }
 
 .plant-details {
-  height: 200px;
+  height: 180px;
+  width: 100%;
   margin-top: 8px;
   padding: 8px;
   overflow: overlay;
   border-radius: var(--card-border-radius);
   background-color: rgba(213, 236, 225, 0.863);
+  border: rgba(47, 95, 60, 0.298) solid 2px;
 }
 
 h1 {
