@@ -3,9 +3,17 @@ body {
   background-color:rgb(31,120,75);
 }
 
+h1 {
+  font-family: var(--title-font);
+  font-size: var(--font-xxl);
+  margin: 12px;
+  padding-top: 8px;
+}
+
 .page-content {
   font-size: 18px;
   letter-spacing: 1.2px;
+  margin: 0 12px;
 }
 
 .logo {
@@ -15,11 +23,15 @@ body {
 }
 
 img {
-  max-width: 60%;
+  max-width: 50%;
 }
 
 @media only screen and (min-width: 768px) {
   img {
-    max-width: 45%;
+    max-width: 40%;
+  }
+
+  h1 {
+    font-size: var(--font-xtreme);
   }
 }
