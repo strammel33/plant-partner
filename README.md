@@ -1,13 +1,12 @@
 # 🌿 Plant Partner 🌱
 ## The Forgetful Gardener's Best Friend
-## [Plant Partner](https://plantpartner.fly.dev)
-***
+## Use Plant Partner [here](https://plantpartner.fly.dev)!
 
 Plant Partner is a Python/Django app made for people who struggle to keep their house plants alive. If you lack a green thumb, this is the app for you.
 
 Once a user signs up, they can add plants to their list with location information and other relevant care details. Then the user may add dated instances of watering, fertilizing, or misting to the plant so that they know when they last took care of it!
 
-Plant Partner makes it simple to know when you last completed basic houseplant care. Gone are the days of wondering if you watered the plants last week- or was it the week before? If you wish could keep plants in your home without neglecting them to death, use Plant Partner to keep you and your plants happy!
+Plant Partner makes it simple to know when you last completed basic houseplant care by storing plant data in a PostgreSQL database. Gone are the days of wondering if you watered the plants last week- or was it the week before? If you wish could keep plants in your home without neglecting them to death, use Plant Partner to keep you and your plants happy!
 
 ![HLanding Page](/main_app/static/images/landing-page.png)
 
