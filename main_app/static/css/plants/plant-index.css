@@ -1,4 +1,6 @@
-
+.no-plants {
+  color:aliceblue;
+}
 .card-container {
   display: flex;
   justify-content: center;

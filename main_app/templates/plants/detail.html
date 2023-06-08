@@ -18,6 +18,8 @@
 {% block content %}
 <section class="plant-container">
   <section class="plant">
+    <h1>{{ plant.name }}</h1>
+    <p id="file-name"></p>
     <div class="plant-img">
       {% if plant.photo.url %}
         <img 
@@ -32,7 +34,6 @@
         >
       {% endif %}
     </div>
-    <p id="file-name"></p>
     <form 
       action="{% url 'add-photo' plant.id %}"
       enctype="multipart/form-data"
@@ -47,14 +48,18 @@
       <button type="submit" class="btn submit">Upload Photo</button>
     </form>
     <div class="plant-details">
-      <h1>{{ plant.name }}</h1>
-      <h2>{{ plant.location }}</h2>
+      
+      <p>Located: {{ plant.location }}</p>
+      <hr />
       <p>{{ plant.description }}</p>
     </div>
     <div class='plant-actions'>
-      <a href="{% url 'plant-update' plant.id %}" class="btn warn">Edit</a>
-      <p class="invisible"></p>
-      <a href="{% url 'plant-delete' plant.id %}" class="btn danger">Delete</a>
+      <a href="{% url 'plant-update' plant.id %}">
+        <img src="{% static 'images/edit.png' %}" alt="A pencil on paper icon">
+      </a>
+      <a href="{% url 'plant-delete' plant.id %}">
+        <img src="{% static 'images/bin.png' %}" alt="A garbage can icon">
+      </a>
     </div>
   </section>
 </section>

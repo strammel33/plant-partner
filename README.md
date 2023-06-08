@@ -40,7 +40,9 @@ Plant Partner makes it simple to know when you last completed basic houseplant c
   * [Leaf Icon by Good Ware](https://www.flaticon.com/free-icon/leaf_861054?term=leaf&page=1&position=11&origin=tag&related_id=861054)
 * Icons
   * [Default Plant by Umeicon](https://www.flaticon.com/free-icon/plant-pot_2469993?term=potted+plant&page=1&position=39&origin=search&related_id=2469993)
+  * [Edit by Pixel perfect](https://www.flaticon.com/free-icon/edit_1828270)
   * [Fertilizer by Victoruler](https://www.flaticon.com/free-icon/fertilizer_1993780)
+  * [Garbage by Freepik](https://www.flaticon.com/free-icon/bin_484560)
   * [Gravestone by amonrat rungreangfangsai](https://www.flaticon.com/free-icon/gravestone_4766441?term=gravestone&page=1&position=10&origin=search&related_id=4766441)
   * [Orchid by Freepik](https://www.flaticon.com/free-icon/orchid_4842298)
   * [Spray by Freepik](https://www.flaticon.com/free-icon/spray_2042429)

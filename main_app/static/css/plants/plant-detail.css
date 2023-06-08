@@ -13,17 +13,17 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 10px 15px;
   background-color: var(--nav-bg);
   height: 600px;
   width: 400px;
   border: var(--borders);
   border-radius: var(--card-border-radius);
-  box-shadow: var(--card-box-shadow);
 }
 
 .plant-img {
+  margin-top: 8px;;
   max-width: 350px;
 }
 
@@ -35,15 +35,22 @@ main {
 
 .plant-actions {
   display: flex;
-  justify-content: center;
-  width: 400px;
-  margin: 8px 0;
+  justify-content: end;
+  width: 100%;
+}
+
+.plant-actions > a {
+  border-radius: var(--card-border-radius);
+  padding: 8px;
+  background-color: rgba(213, 236, 225, 0.863);
+  margin-right: 12px;
+  border: rgba(47, 95, 60, 0.298) solid 2px;
 }
 
 .plant > form {
   display: flex;
-  justify-content: center;
-  width: 400px;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .invisible {
@@ -59,7 +66,6 @@ main {
   width: 400px;
   border: var(--borders);
   border-radius: var(--card-border-radius);
-  box-shadow: var(--card-box-shadow);
 }
 
 .subsection-title {
@@ -92,24 +98,23 @@ main {
 }
 
 .plant-details {
-  max-height: 200px;
-  margin-top: 5px;
+  height: 200px;
+  margin-top: 8px;
+  padding: 8px;
   overflow: overlay;
+  border-radius: var(--card-border-radius);
+  background-color: rgba(213, 236, 225, 0.863);
 }
 
-.plant-details h1 {
+h1 {
   font-family: var(--title-font);
   font-size: var(--font-xxl);
   text-align: center;
   margin: 8px 0 0;
 }
 
-.plant-details h2 {
-  font-size: var(--font-xl);
-  text-align: center;
-  margin: 0 0 10px;
-  margin-top: 0;
-  margin-bottom: 10px;
+hr {
+  border: rgb(47, 95, 60) solid 1.5px;
 }
 
 .plant-details p {
@@ -212,4 +217,8 @@ form {
   .care-container {
     padding: 0 40px;
   }
+}
+
+.plant-actions > a:hover{
+  border: rgba(241, 243, 241, 0.817) solid 1.5px;
 }
