@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'plantpartner.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('BIT_IO_DATABASE_NAME'),
-        'USER': env('BIT_IO_USER'),
-        'PASSWORD': env('BIT_IO_PASSWORD'),
-        'HOST': 'db.bit.io',
-        'PORT': '5432',
+        'NAME': env('DATABASE'),
+        'USER': env('SUPABASE_USER'),
+        'PASSWORD': env('SUPABASE_PASSWORD'),
+        'HOST': env('SUPABASE_HOST'),
+        'PORT': env('PORT'),
     }
 }
 
